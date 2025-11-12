@@ -1,5 +1,6 @@
 import { PersonBuilder } from './person-builder'
 import { Person } from './person'
+import { Gender } from './gender'
 
 describe('PersonBuilder test suite', () => {
     let uncompletePerson: any
@@ -11,14 +12,16 @@ describe('PersonBuilder test suite', () => {
             prenom: 'Bob',
             email: '',
             telephone: '06xxxxxx',
-            adresse: 'Test'
+            adresse: 'Test',
+            genre: Gender.NON_GENRE
         }
         completePerson = {
             nom: 'Morane',
             prenom: 'Bob',
             email: 'bob@test.com',
             telephone: '06xxxxxx',
-            adresse: 'Test'
+            adresse: 'Test',
+            genre: Gender.MASCULIN
         }
     })
 
@@ -30,6 +33,7 @@ describe('PersonBuilder test suite', () => {
             .adresse(uncompletePerson.adresse)
             .email(uncompletePerson.email)
             .telephone(uncompletePerson.telephone)
+            .genre(uncompletePerson.genre)
 
         expect(() => builder.build()).toThrow()
     })

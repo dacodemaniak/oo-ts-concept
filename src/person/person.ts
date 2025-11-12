@@ -14,6 +14,8 @@ export class Person {
     
     telephone: string = ''
 
+    public genre: string = ''
+    
     /**
      * La stratégie à utiliser pour dire bonjour
      */

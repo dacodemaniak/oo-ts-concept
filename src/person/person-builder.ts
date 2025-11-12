@@ -7,6 +7,7 @@ export class PersonBuilder implements Builder<Person> {
     private _adresse: string = ''
     private _email: string = ''
     private _telephone: string = ''
+    private _genre: string = ''
 
     public nom(nom: string): PersonBuilder {
         this._nom = nom
@@ -33,6 +34,11 @@ export class PersonBuilder implements Builder<Person> {
         return this
     }
 
+    genre(genre: string): PersonBuilder {
+        this._genre = genre
+        return this
+    }
+
     /**
      * Construire et retourner une instance de Person
      * Lever une exception si : nom ou prenom ou email ne sont pas correct
@@ -55,7 +61,7 @@ export class PersonBuilder implements Builder<Person> {
         const person = new Person(this._nom, this._prenom, this._email)
         person.adresse = this._adresse
         person.telephone = this._telephone
-
+        person.genre = this._genre
         return person
     }
 }

@@ -1,3 +1,4 @@
+import { Gender } from './gender'
 import { Person } from './person'
 import { NameHelloStrategy } from './strategies/name-hello-strategy'
 describe('Person tests suite', () => {
@@ -9,7 +10,7 @@ describe('Person tests suite', () => {
     it('Should return Bob Morane', () => {
         const person = new Person('Morane', 'Bob', '')
         person.setName('Morane')
-
+        person.genre = Gender.NON_GENRE
         expect(person.sayHello()).toBe('Bob Morane')
     })
 
@@ -17,15 +18,24 @@ describe('Person tests suite', () => {
         const person = new Person('Morane', 'Bob', '')
         person.setName('Morane')
         person.setName('Tartempion')
+        person.genre = Gender.MASCULIN
 
-        expect(person.sayHello()).toBe('Bob Morane')
+        expect(person.sayHello()).toBe('Mr Bob Morane')
     })
     
     it('Should return Morane Bob if nameHelloStrategy is used', () => {
         const person = new Person('Morane', 'Bob', '')
-        person.setName('Morane')
+        person.genre = Gender.NON_GENRE
         person.setHelloStrategy(new NameHelloStrategy())
 
         expect(person.sayHello()).toBe('Morane Bob')
+    }) 
+
+    it('Should return Mme Morane Bobbie if nameHelloStrategy is used', () => {
+        const person = new Person('Morane', 'Bobbie', '')
+        person.genre = Gender.FEMININ
+        person.setHelloStrategy(new NameHelloStrategy())
+
+        expect(person.sayHello()).toBe('Mme Morane Bobbie')
     }) 
 })
