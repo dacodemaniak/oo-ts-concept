@@ -1,5 +1,5 @@
 import { Person } from './person'
-
+import { NameHelloStrategy } from './strategies/name-hello-strategy'
 describe('Person tests suite', () => {
     it ('Should be an instanceof Person', () => {
         const person = new Person('', '', '')
@@ -19,5 +19,13 @@ describe('Person tests suite', () => {
         person.setName('Tartempion')
 
         expect(person.sayHello()).toBe('Bob Morane')
-    })    
+    })
+    
+    it('Should return Morane Bob if nameHelloStrategy is used', () => {
+        const person = new Person('Morane', 'Bob', '')
+        person.setName('Morane')
+        person.setHelloStrategy(new NameHelloStrategy())
+
+        expect(person.sayHello()).toBe('Morane Bob')
+    }) 
 })

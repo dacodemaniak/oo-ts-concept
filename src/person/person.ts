@@ -1,3 +1,6 @@
+import { FirstNameHelloStrategy } from "./strategies/firstname-hello-strategy"
+import { HelloStrategy } from "./strategies/hello-strategy"
+
 export class Person {
     /**
      * nom de la personne
@@ -10,6 +13,11 @@ export class Person {
     adresse: string = ''
     
     telephone: string = ''
+
+    /**
+     * La stratégie à utiliser pour dire bonjour
+     */
+    private helloStrategy: HelloStrategy = new FirstNameHelloStrategy()
 
     constructor(nom: string, prenom: string, email: string) {
         this.nom = nom
@@ -26,11 +34,23 @@ export class Person {
             this.nom = nom
     }
 
+    getName(): string {
+        return this.nom
+    }
+
+    getPrenom(): string {
+        return this.prenom
+    }
+
     getEmail(): string {
         return this.email
     }
 
+    setHelloStrategy(strategy: HelloStrategy): void {
+        this.helloStrategy = strategy
+    }
+
     sayHello(): string {
-        return `${this.prenom} ${this.nom}`
+        return this.helloStrategy.displayPerson(this)
     }
 }

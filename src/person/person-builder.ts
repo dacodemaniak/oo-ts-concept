@@ -1,7 +1,7 @@
 import { Builder } from "./builder"
 import { Person } from "./person"
 
-export class PersonBuilder implements Builder {
+export class PersonBuilder implements Builder<Person> {
     private _nom: string = ''
     private _prenom: string = ''
     private _adresse: string = ''
