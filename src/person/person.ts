@@ -4,11 +4,18 @@ export class Person {
      * @abstract Le nom une fois défini ne peut plus être modifié
      */
     private nom: string = ''
+    private email: string = ''
 
-    prenom: string = ''
+    private prenom: string = ''
     adresse: string = ''
-    email: string = ''
+    
     telephone: string = ''
+
+    constructor(nom: string, prenom: string, email: string) {
+        this.nom = nom
+        this.prenom = prenom
+        this.email = email
+    }
 
     /**
      * Définit le nom de la personne si non défini précédemment
@@ -17,6 +24,10 @@ export class Person {
     setName(nom: string): void {
         if (this.nom === '')
             this.nom = nom
+    }
+
+    getEmail(): string {
+        return this.email
     }
 
     sayHello(): string {
