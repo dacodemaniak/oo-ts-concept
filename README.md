@@ -44,31 +44,6 @@ npm run test:watch      # Lance les tests en mode watch
 npm run test:coverage   # Lance les tests avec couverture de code
 ```
 
-## Concepts POO illustrés
-
-### 1. **Classes et Héritage**
-- Classe abstraite `Animal`
-- Classes concrètes `Dog` et `Cat` qui héritent d'`Animal`
-- Méthodes abstraites et concrètes
-
-### 2. **Polymorphisme**
-- Méthode `makeSound()` implémentée différemment dans chaque sous-classe
-- Démonstration du comportement polymorphique
-
-### 3. **Encapsulation**
-- Classe `BankAccount` avec propriétés privées
-- Getters/setters pour contrôler l'accès aux données
-- Protection de la logique métier
-
-### 4. **Interfaces**
-- Interface `IPerson` définissant un contrat
-- Classe `Person` implémentant l'interface
-
-### 5. **Modificateurs d'accès**
-- `private` : accessible uniquement dans la classe
-- `protected` : accessible dans la classe et ses sous-classes
-- `public` : accessible partout (par défaut)
-
 ## Structure du projet
 
 ```
@@ -98,22 +73,6 @@ npm run test:coverage   # Lance les tests avec couverture de code
 - `jest` : Framework de tests
 - `ts-jest` : Support TypeScript pour Jest
 
-## Utilisation
-
-L'application présente un menu interactif permettant d'explorer différents concepts POO :
-
-1. **Animaux** : Démontre l'héritage et le polymorphisme
-2. **Personne** : Illustre l'utilisation des interfaces
-3. **Compte bancaire** : Montre l'encapsulation et la protection des données
-
-Chaque exemple est interactif et demande des entrées utilisateur pour personnaliser les démonstrations.
-
-## Ajouter vos propres exemples
-
-1. Créez vos classes dans `src/`
-2. Ajoutez des tests dans un fichier `*.test.ts`
-3. Importez et utilisez vos classes dans `src/main.ts`
-4. Lancez `npm run dev` pour tester
 
 ## Ressources
 
