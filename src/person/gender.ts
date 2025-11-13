@@ -1,7 +1,7 @@
 export class Gender {
-    public static readonly MASCULIN = 'Mr'
-    public static readonly FEMININ = 'Mme'
-    public static readonly NON_GENRE = ''
+    public static readonly MASCULIN = 'Masculin'
+    public static readonly FEMININ = 'Féminin'
+    public static readonly NON_GENRE = 'Non binaire'
 }
 
 /**
