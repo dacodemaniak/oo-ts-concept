@@ -1,4 +1,4 @@
-abstract class HttpClient<T> implements HttpClientInterface<T> {
+export abstract class HttpClient<T> implements HttpClientInterface<T> {
   protected baseURL: string;
 
   constructor(baseURL: string = 'http://127.0.0.1:3000') {
