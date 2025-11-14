@@ -21,5 +21,6 @@ export class PersonDisplay extends CliDisplay<Person> implements AfterInit {
         this.dataToDisplay = await this.service.findAll()
         const ihm: Ihm<Person> = IhmRegistry.getRegistry().getIhm('all_persons')
         ihm.setDatas(this.dataToDisplay)
+        ihm.display()
     }
 }

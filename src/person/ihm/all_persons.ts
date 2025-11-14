@@ -7,10 +7,9 @@ export class AllPersons implements Ihm<Person> {
 
     setDatas(datas: Person | List<Person>): void {
         this.datas = datas as List<Person>
-        this.displayList()
     }
 
-    private displayList(): void {
+    display(): void {
         let list = 'id      | nom               | prenom                | email             |\n';
 
         (this.datas.getList() as Array<Person>).forEach((person: Person) => {
