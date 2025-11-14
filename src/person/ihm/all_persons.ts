@@ -1,7 +1,7 @@
 import { Ihm } from "../../core/infrastructure/ihm"
 import { List } from "../../core/list/list";
 import { Person } from "../person";
-
+import { table } from "table";
 export class AllPersons implements Ihm<Person> {
     private datas!: List<Person>
 
@@ -10,12 +10,17 @@ export class AllPersons implements Ihm<Person> {
     }
 
     display(): void {
-        let list = 'id      | nom               | prenom                | email             |\n';
-
-        (this.datas.getList() as Array<Person>).forEach((person: Person) => {
-            list += `       | ${person.getName()}       | ${person.getPrenom()}     | ${person.getEmail()}      |\n`     
-        });
-        console.log(list)
+        const data = (this.datas.getList() as Array<Person>)
+            .map((person: Person) => {
+                return [
+                    '',
+                    person.getName(),
+                    person.getPrenom(),
+                    person.getEmail()
+                ]
+            })
+        data.unshift(['', 'Nom', 'Prénom', 'Email'])
+        console.log(table(data))
     }
 
 }
