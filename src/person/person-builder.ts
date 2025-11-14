@@ -1,4 +1,4 @@
-import { Builder } from "./builder"
+import { Builder } from "../core/builder/builder"
 import { Person } from "./person"
 
 export class PersonBuilder implements Builder<Person> {
